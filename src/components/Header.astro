@@ -1,9 +1,9 @@
 ---
-
+import ThemeToggle from "./ThemeToggle.svelte";
 ---
 
-<header class="w-screen h-10 bg-blue-950">
-
+<header data-testid="header" class="w-screen h-10 bg-base-100 dark:bg-base-200">
+    <ThemeToggle client:only="svelte" />
 </header>
 
 <style lang="scss">
