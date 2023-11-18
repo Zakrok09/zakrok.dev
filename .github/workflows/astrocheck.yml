@@ -20,12 +20,14 @@ jobs:
   unit:
     timeout-minutes: 20
     runs-on: ubuntu-latest
+    needs: setup
     steps:
       - name: Build app
         run: bun test unit --coverage
   playwright:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    needs: setup
     steps:
       - name: Install Playwright Browsers
         run: bunx playwright install --with-deps
