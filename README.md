@@ -1,4 +1,4 @@
-[![Bun Tests](https://github.com/Zakrok09/zakrok.dev/actions/workflows/astrocheck.yml/badge.svg?branch=main)](https://github.com/Zakrok09/zakrok.dev/actions/workflows/astrocheck.yml)
+[![Test](https://github.com/Zakrok09/zakrok.dev/actions/workflows/astrocheck.yml/badge.svg?branch=main)](https://github.com/Zakrok09/zakrok.dev/actions/workflows/astrocheck.yml)
 
 
 # Zakrok.dev Website
