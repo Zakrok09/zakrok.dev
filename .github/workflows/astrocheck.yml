@@ -1,12 +1,12 @@
-name: Bun Tests
+name: Test
 on:
   push:
     branches: [main, master, stable]
   pull_request:
     branches: [main, master, stable]
 jobs:
-  test:
-    timeout-minutes: 60
+  setup:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -17,3 +17,23 @@ jobs:
         run: bun install
       - name: Check
         run: bunx astro check
+  unit:
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build app
+        run: bun test unit --coverage
+  playwright:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Playwright Browsers
+        run: bunx playwright install --with-deps
+      - name: Run Playwright tests
+        run: bunx playwright test
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
