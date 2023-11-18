@@ -1,6 +1,6 @@
 import { expect, test, describe } from "bun:test";
 
-describe("arithmetic", () => {
+describe("aa", () => {
     test("2 + 2", () => {
         expect(2 + 2).toBe(4);
     });

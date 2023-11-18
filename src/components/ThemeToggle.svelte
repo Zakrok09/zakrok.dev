@@ -17,6 +17,6 @@
     }
 </script>
 
-<button on:click={toggleTheme}>
+<button on:click={toggleTheme} data-testid="theme-switch">
     {theme === "light" ? "🌞" : "🌙"}
 </button>
