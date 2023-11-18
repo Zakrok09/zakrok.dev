@@ -17,13 +17,12 @@ jobs:
         run: bun install
       - name: Check
         run: bunx astro check
-      - name: Save cache
-        uses: actions/cache@v2
+      - name: Save bun and bunx
+        uses: actions/upload-artifact@v3
         with:
-          path: |
-            ~/.cache/bun
-            ~/.cache/bunx
-          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
+          name: bun
+          path: /usr/local/bin/bun
+          retention-days: 1
   unit:
     timeout-minutes: 20
     runs-on: ubuntu-latest
