@@ -17,6 +17,13 @@ jobs:
         run: bun install
       - name: Check
         run: bunx astro check
+      - name: Save cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/bun
+            ~/.cache/bunx
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
   unit:
     timeout-minutes: 20
     runs-on: ubuntu-latest
