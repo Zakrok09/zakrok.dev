@@ -43,7 +43,7 @@ jobs:
         run: bun install
       - name: Store Playwright's Version
         run: |
-          PLAYWRIGHT_VERSION=$(bun ls @playwright/test | grep @playwright | sed 's/.*@//')
+          PLAYWRIGHT_VERSION=$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')
           echo "Playwright's Version: $PLAYWRIGHT_VERSION"
           echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
       - name: Cache Playwright Browsers for Playwright's Version
@@ -52,9 +52,13 @@ jobs:
         with:
           path: ~/.cache/ms-playwright
           key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
-      - name: Setup Playwright
+      - name: Setup Playwright with browsers
         if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
         run: bunx playwright install --with-deps
+      - name: Setup Playwright without browsers
+        if: steps.cache-playwright-browsers.outputs.cache-hit == 'true'
+        run: bunx playwright install-deps
+
       - name: Run Playwright tests
         run: bunx playwright test
       - uses: actions/upload-artifact@v3
