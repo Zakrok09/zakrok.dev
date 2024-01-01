@@ -2,6 +2,28 @@
 import Header from '../components/Header.astro'
 ---
 
+<!-- Theme switcher -->
+<script is:inline>
+    const theme = (() => {
+        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+            return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
+        }
+        return "light";
+    })();
+
+    if (theme === "light") {
+        document.documentElement.classList.remove("dark");
+    } else {
+        document.documentElement.classList.add("dark");
+    }
+    window.localStorage.setItem("theme", theme);
+</script>
+
 <Header />
 
-<slot />
+<main class="bg-amber-50 dark:bg-base-100">
+    <slot />
+</main>
