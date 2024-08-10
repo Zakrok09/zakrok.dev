@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<html data-testid="html" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="generator" content={Astro.generator}/>
+    <title>Zakrok</title>
+</head>
+
+<BaseLayout>
+    <h1 class="text-3xl text-secondary">Kiril P.</h1>
+    <section class="mt-8 flex flex-col gap-4">
+        <p><b>Greetings!</b> I am an Honours Computer Science student at TU Delft currently in year 2 of my bachelor. I
+            am currently doing research in Software Quality in the field of Technical Debt analysis and prevention.</p>
+        <p><b>Experience:</b> I am also a web developer with proficiency in TypeScript, Svelte and SvelteKit. You can
+            check my projects on
+            <a class="underline text-secondary dark:text-primary" href="https://github.com/Zakrok09">my GitHub page</a>.
+            Additionally, I have experience in Java, C and C++ having numerous projects in those languages including a
+            Ray-Tracer, Embedded Software programs and back-end for services.</p>
+        <p><b>Background:</b> I was born in Bulgaria and got my high school education at "PMG Akad. Nikola Obreshkov".
+            In 2022 I began studying CSE at TU Delft.</p>
+    </section>
+    <section class="mt-24">
+        <span>Contact:</span>
+        <ul class="indent-1">
+            <li class="list-item"><a href="https://github.com/Zakrok09" class="link text-secondary dark:text-primary">GitHub</a>
+            </li>
+            <li class="list-item"><a href="mailto:contact@zakrok.dev" class="link text-secondary dark:text-primary">email</a>
+            </li>
+        </ul>
+    </section>
+</BaseLayout>
+</html>
