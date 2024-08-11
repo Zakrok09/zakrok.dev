@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.svelte";
 import AboutCard from "../components/AboutCard.astro";
+import Hero from "../components/Hero.astro";
 ---
 <html data-testid="html" lang="en">
 <head>
@@ -13,21 +14,9 @@ import AboutCard from "../components/AboutCard.astro";
 </head>
 
 <BaseLayout>
-    <section class="py-20 px-4 md:px-20 lg:px-40 xl:px-96">
-        <img alt="" src="elipse_blur_light.svg" class="relative inline dark:hidden top-[250px] left-[-300px] -z-10">
-        <img alt="" src="elipse_blur_dark.svg" class="relative hidden dark:inline top-[250px] left-[-300px] -z-10">
-        <span class="text-sm text-gray-400 font-mono"># computer science student @ TUDelft</span>
-        <h1 class="my-2 mb-8 text-4xl font-mono font-bold">
-            Hello, I am <span class="text-primary dark:text-secondary">Kiril Panayotov</span>
-        </h1>
-        <div class="flex flex-wrap gap-2 items-center">
-            <a href="/portfolio"
-               class="btn btn-primary dark:btn-secondary text-white">
-                Explore my Work >
-            </a>
-            <a href="/blog" class="underline">browse my recent blog posts ></a>
-        </div>
-    </section>
+    <Hero cta={true} subtitle="# computer science student @ TUDelft">
+        Hello, I am <span class="text-primary dark:text-secondary">Kiril Panayotov</span>
+    </Hero>
 
     <Section className="bg-gray-50 dark:bg-surface-950 flex flex-col md:grid md:grid-cols-2 py-16">
         <div class="text-gray-600 dark:text-gray-400 flex flex-col items-start gap-2">
