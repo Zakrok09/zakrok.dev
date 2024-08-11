@@ -13,7 +13,7 @@ import AboutCard from "../components/AboutCard.astro";
 </head>
 
 <BaseLayout>
-    <Section>
+    <section class="py-20 px-4 md:px-20 lg:px-40 xl:px-96">
         <img alt="" src="elipse_blur_light.svg" class="relative inline dark:hidden top-[250px] left-[-300px] -z-10">
         <img alt="" src="elipse_blur_dark.svg" class="relative hidden dark:inline top-[250px] left-[-300px] -z-10">
         <span class="text-sm text-gray-400 font-mono"># computer science student @ TUDelft</span>
@@ -27,7 +27,7 @@ import AboutCard from "../components/AboutCard.astro";
             </a>
             <a href="/blog" class="underline">browse my recent blog posts ></a>
         </div>
-    </Section>
+    </section>
 
     <Section className="bg-gray-50 dark:bg-surface-950 flex flex-col md:grid md:grid-cols-2 py-16">
         <div class="text-gray-600 dark:text-gray-400 flex flex-col items-start gap-2">
@@ -65,11 +65,4 @@ import AboutCard from "../components/AboutCard.astro";
         <p>well it's currently empty :(</p>
     </Section>
 </BaseLayout>
-
-<footer class="mt-40 h-40 bg-surface-900 text-surface-100 font-mono flex justify-center items-center gap-4">
-    <p>zakrok.dev ❤</p>
-    <p>all rights reserved</p>
-    <p>foss at <a href="https://github.com/Zakrok09/zakrok.dev">GitHub</a></p>
-</footer>
-
 </html>
