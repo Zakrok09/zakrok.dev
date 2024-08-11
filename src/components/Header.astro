@@ -18,7 +18,7 @@ const hrefs:{title:string, href:string}[] = [
             <b class="font-mono">zakrok.dev</b>
             <ThemeToggle client:only="svelte" />
         </div>
-        <ul class="flex gap-4">
+        <ul class="hidden sm:flex gap-4">
             {hrefs.map(link =>
                 <li>
                     <a class="transition-all hover:underline hover:text-primary dark:hover:text-secondary" href={link.href}>{link.title}</a>
