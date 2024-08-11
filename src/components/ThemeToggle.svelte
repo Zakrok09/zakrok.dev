@@ -1,5 +1,12 @@
 <script lang="ts">
-  let theme:"light"|"dark" = localStorage.getItem("theme") as "light"|"dark" || "light";
+  import {onMount} from "svelte";
+
+  let theme:"light"|"dark" = "light";
+
+
+  onMount(() => {
+    localStorage.getItem("theme") as "light"|"dark" || "light"
+  })
 
   /**
    * Toggle the theme between light and dark.

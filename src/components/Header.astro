@@ -1,10 +1,33 @@
 ---
 import ThemeToggle from "./ThemeToggle.svelte";
+import PagePadding from "./Section.svelte"
+
+const hrefs:{title:string, href:string}[] = [
+    {title: "Home", href: "/"},
+    {title: "About", href: "/"},
+    {title: "Blog", href: "/"},
+    {title: "Books", href: "/"},
+    {title: "GH", href: "https://github.com/Zakrok09"},
+    {title: "LinkedIn", href: "https://www.linkedin.com/in/kiril-panayotov/"},
+]
 ---
 
-<header data-testid="header" class="w-screen p-4 bg-base-100 dark:bg-base-200 flex justify-center items-center gap-4">
-    <b>Zakrok.dev</b>
+<header data-testid="header" class="w-screen py-4">
+    <PagePadding className="flex justify-between">
+        <div>
+            <b class="font-mono">zakrok.dev</b>
+            <ThemeToggle client:only="svelte" />
+        </div>
+        <ul class="flex gap-4">
+            {hrefs.map(link =>
+                <li>
+                    <a class="transition-all hover:underline hover:text-primary dark:hover:text-secondary" href={link.href}>{link.title}</a>
+                </li>
+            )}
+        </ul>
+    </PagePadding>
+    <PagePadding>
+        <hr class="my-2">
+    </PagePadding>
 </header>
 
-<style lang="scss">
-</style>

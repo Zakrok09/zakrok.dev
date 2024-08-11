@@ -1,36 +1,74 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.svelte";
+import AboutCard from "../components/AboutCard.astro";
 ---
 <html data-testid="html" lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-    <meta name="viewport" content="width=device-width"/>
-    <meta name="generator" content={Astro.generator}/>
-    <title>Zakrok</title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>zakrok.dev</title>
 </head>
 
 <BaseLayout>
-    <h1 class="text-3xl text-secondary">Kiril P.</h1>
-    <section class="mt-8 flex flex-col gap-4">
-        <p><b>Greetings!</b> I am an Honours Computer Science student at TU Delft currently in year 2 of my bachelor. I
-            am currently doing research in Software Quality in the field of Technical Debt analysis and prevention.</p>
-        <p><b>Experience:</b> I am also a web developer with proficiency in TypeScript, Svelte and SvelteKit. You can
-            check my projects on
-            <a class="underline text-secondary dark:text-primary" href="https://github.com/Zakrok09">my GitHub page</a>.
-            Additionally, I have experience in Java, C and C++ having numerous projects in those languages including a
-            Ray-Tracer, Embedded Software programs and back-end for services.</p>
-        <p><b>Background:</b> I was born in Bulgaria and got my high school education at "PMG Akad. Nikola Obreshkov".
-            In 2022 I began studying CSE at TU Delft.</p>
-    </section>
-    <section class="mt-24">
-        <span>Contact:</span>
-        <ul class="indent-1">
-            <li class="list-item"><a href="https://github.com/Zakrok09" class="link text-secondary dark:text-primary">GitHub</a>
-            </li>
-            <li class="list-item"><a href="mailto:contact@zakrok.dev" class="link text-secondary dark:text-primary">email</a>
-            </li>
-        </ul>
-    </section>
+    <Section className="mb-32">
+        <img alt="" src="elipse_blur.svg" class="relative top-[250px] left-[-300px] -z-10">
+        <span class="text-sm text-gray-400 font-mono"># computer science student @ TUDelft</span>
+        <h1 class="my-2 mb-8 text-4xl font-mono font-bold">
+            Hello, I am <span class="text-primary dark:text-secondary">Kiril Panayotov</span>
+        </h1>
+        <div class="flex flex-wrap gap-2 items-center">
+            <a href="/portfolio"
+               class="btn bg-primary text-white dark:text-surface-950 dark:bg-secondary dark:hover:bg-secondary">
+                Explore my Work >
+            </a>
+            <a href="/blog" class="underline">browse my recent blog posts ></a>
+        </div>
+    </Section>
+
+    <Section className="bg-gray-50 dark:bg-surface-950 grid grid-cols-2 py-16">
+        <div class="text-gray-600 dark:text-gray-400 flex flex-col items-start gap-2">
+            <div class="py-4">
+                <span class="text-sm text-gray-400 font-mono">// all kinds of things</span>
+                <h2 class="text-3xl font-semibold font-mono text-surface-900 dark:text-white">About me</h2>
+            </div>
+            <p><b>Greetings,</b> I am a Software Engineer, currently working as an intern in Manometric, NL. I am
+                responsible for assuring the quality of its services by providing extensive end-to-end automatic
+                testing as well as unit and component tests. Additionally, I maintain several automations within its
+                communication systems.
+            </p>
+            <p><b>Student: </b>The university I am currently in is TU Delft where I am doing my 3rd year of its Computer
+                Science & Engineering bachelor. I am also doing its its honours programme where I am doing research on
+                Analysing Technical Debt in the era of LLM.</p>
+            <p><b>Delft Hyperloop: </b> As a former Front End engineer at DH08, I developed the Serpenta GUI - a
+                graphical user interface for monitoring and controlling the magnetically-levitating hyperloop pod.</p>
+            <p><b>Praxidike: </b> As the leader of team Praxidike, I organize and manage its open-source projects.</p>
+            <a href="/about" class="font-mono text-primary dark:text-secondary underline pt-4">continue ></a>
+        </div>
+
+        <div class="p-14 flex flex-col gap-8 justify-center ">
+            <AboutCard title="Student" subtitle="at TU Delft Computer Science & Engineering" />
+            <AboutCard title="Research" subtitle="in Software Quality (as part of honours programme)" />
+            <AboutCard title="Software Developer" subtitle="at Manometric, Delft Hyperloop, Cargomatters ltd." />
+        </div>
+    </Section>
+
+    <Section>
+        <div class="py-4">
+            <span class="text-sm text-gray-400 font-mono">/* from notes to articles */</span>
+            <h2 class="text-3xl font-semibold font-mono text-surface-900 dark:text-white">Blog</h2>
+        </div>
+
+        <p>well it's currently empty :(</p>
+    </Section>
 </BaseLayout>
+
+<footer class="mt-40 h-40 bg-surface-900 text-surface-100 font-mono flex justify-center items-center gap-4">
+    <p>zakrok.dev ❤</p>
+    <p>all rights reserved</p>
+    <p>foss at <a href="https://github.com/Zakrok09/zakrok.dev">GitHub</a></p>
+</footer>
+
 </html>
