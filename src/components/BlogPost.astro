@@ -19,7 +19,10 @@ const { tags, description, title, pubDate, img } = frontmatter;
         <div class="card-actions justify-between items-center">
             <div class="flex gap-2">
                 {tags.slice(0, 2).map(tag =>
-                    <div class="badge badge-outline rounded-lg">{tag}</div>
+                    <a class="badge badge-outline rounded-lg"
+                       href={`/blog/${tag}`}>
+                        {tag}
+                    </a>
                 )}
             </div>
             <a class="btn btn-primary dark:btn-secondary my-2" href={url}>
