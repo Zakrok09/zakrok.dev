@@ -12,8 +12,8 @@ const hrefs:{title:string, href:string}[] = [
 ]
 ---
 
-<header data-testid="header" class="w-screen py-4">
-    <PagePadding className="flex justify-between">
+<header data-testid="header" class="w-screen py-4 px-4 md:px-20 lg:px-40 xl:px-96">
+    <div class="flex justify-between">
         <div>
             <b class="font-mono">zakrok.dev</b>
             <ThemeToggle client:only="svelte" />
@@ -25,9 +25,7 @@ const hrefs:{title:string, href:string}[] = [
                 </li>
             )}
         </ul>
-    </PagePadding>
-    <PagePadding>
-        <hr class="my-2">
-    </PagePadding>
+    </div>
+    <hr class="my-2">
 </header>
 
