@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import HighlightedText from "../components/HighlightedText.astro";
+import Section from "../components/Section.svelte";
+---
+
+<BaseLayout>
+    <Hero>
+        About
+        <HighlightedText>me</HighlightedText>
+    </Hero>
+    <Section className="flex flex-col md:grid md:grid-cols-2 py-4 pb-8">
+        <div class="text-gray-600 dark:text-gray-400 flex flex-col items-start gap-2">
+            <div class="py-4">
+                <span class="text-xs text-gray-400 font-mono">/* work related */</span>
+                <h2 class="text-3xl font-semibold font-mono text-surface-900 dark:text-white">Software Engineer</h2>
+            </div>
+            <p><b>Beauty of software engineering.</b> Developing software is engineering. The complexity of big systems
+                must be met with appropriate actions to ensure reliability, maintainability, extendability. Meeting
+                these criteria is a challenge in which I find motivation.
+            </p>
+        </div>
+    </Section>
+    <Section className="flex flex-col md:grid md:grid-cols-2 py-4">
+        <div class="text-gray-600 dark:text-gray-400 flex flex-col items-start gap-4">
+            <div class="py-4">
+                <span class="text-xs text-gray-400 font-mono">// personal, hobby, etc</span>
+                <h2 class="text-3xl font-semibold font-mono text-surface-900 dark:text-white">As a person</h2>
+            </div>
+
+            <p><b>Hobbies:</b>
+                I love skateboarding, history and riding bike. I also find driving quite exciting.
+            </p>
+
+            <p><b>Music:</b>
+                I am a big fan of rap music, more specifically: Eminem, Kendrick Lamar, Joey Valence & Brae. Despite
+                this, Bring Me the Horizon are also one of my favourites, together with Nothing but Thieves (especially
+                their last album - Dead Club City).
+            </p>
+
+            <p><b>Background.</b> I was born in Burgas, Bulgaria in 2003. In school, I fell in love with math and
+                dubstep. I started gaming around 2nd grade, and five years later I tried making my own game in GameMaker
+                Studio following the tutorials of Heartbeast. To this day, I remember his words <em>(which I am going to
+                    rephrase since I don't remember them exactly)</em>:
+            </p>
+            <q>I love programming because it let's me create my own world.</q>
+            <p>
+                These words resonated with me, and just before 8th grade I started learning web development. I started
+                High-school in the Mathematical School in my city. There I learned more programming languages and
+                algorithms, but I was really keen on studying myself.
+            </p>
+            <p>After a couple of failed attempts on competitions earlier, in 11th grade I founded team Praxidike
+                together with three fellow friends of mine. We won 4 competitions on local and national level, being
+                qualified for the global NASA Challenge.</p>
+            <p>After finishing high school, I enrolled in the Computer Science & Engineering bachelor of TU Delft.
+                In my second year there I joined the Honours Programme of the university with a GPA of 8.7.</p>
+        </div>
+        <div class="flex justify-center items-center p-6">
+            <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/playlist/61Wb6ojTcJ5ld4WOkIHyZa?utm_source=generator&theme=0"
+                    width="100%" height="352" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+        </div>
+    </Section>
+</BaseLayout>

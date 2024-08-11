@@ -1,0 +1,33 @@
+---
+const { url, frontmatter = [] } = Astro.props;
+const { tags, description, title, pubDate, img } = frontmatter;
+---
+
+<article
+    class="card bg-surface-50 w-96 dark:bg-surface-800 rounded-lg shadow-xl">
+    <figure>
+        <img
+            src={img.url}
+            alt="Shoes" />
+    </figure>
+    <div class="card-body p-4">
+        <span class="text-sm dark:text-gray-400">Blog Post • {pubDate.toString().slice(0,10)}</span>
+        <h2 class="text-xl font-semibold font-mono my-0">
+            {title}
+        </h2>
+        <p class="text-sm text-neutral-700 dark:text-neutral-400">{description}</p>
+        <div class="card-actions justify-between items-center">
+            <div class="flex gap-2">
+                {tags.slice(0, 2).map(tag =>
+                    <a class="badge badge-outline rounded-lg"
+                       href={`/blog/${tag}`}>
+                        {tag}
+                    </a>
+                )}
+            </div>
+            <a class="btn btn-primary dark:btn-secondary my-2" href={url}>
+                Read
+            </a>
+        </div>
+    </div>
+</article>

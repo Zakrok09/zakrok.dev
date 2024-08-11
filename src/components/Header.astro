@@ -1,10 +1,75 @@
 ---
 import ThemeToggle from "./ThemeToggle.svelte";
+
+const hrefs: { title: string, href: string, target?: string }[] = [
+    { title: "Home", href: "/" },
+    { title: "About", href: "/about" },
+    { title: "Blog", href: "/blog" },
+    { title: "Projects", href: "/" },
+    { title: "Books", href: "/" },
+    { title: "GH", href: "https://github.com/Zakrok09", target: "about:black" },
+    { title: "LinkedIn", href: "https://www.linkedin.com/in/kiril-panayotov/", target: "about:black" }
+];
 ---
 
-<header data-testid="header" class="w-screen p-4 bg-base-100 dark:bg-base-200 flex justify-center items-center gap-4">
-    <b>Zakrok.dev</b>
+<header data-testid="header" class="w-screen px-4 py-4 md:px-20 lg:px-40 xl:px-96">
+    <div class="flex justify-between items-center">
+        <div>
+            <b class="font-mono">zakrok.dev</b>
+            <div class="hidden sm:inline">
+                <ThemeToggle client:only="svelte" />
+            </div>
+        </div>
+        <nav class="hidden sm:flex gap-4">
+            {hrefs.map(link =>
+                <a class="transition-all hover:underline hover:text-primary dark:hover:text-secondary"
+                   href={link.href} target={link.target}>
+                    {link.title}
+                </a>
+            )}
+        </nav>
+
+        <div class="drawer-end sm:hidden">
+            <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content flex flex-col sm:hidden">
+                <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="inline-block h-6 w-6 stroke-current">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </label>
+            </div>
+            <div class="drawer-side">
+                <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+                <div class="menu bg-surface-50 min-h-full flex flex-col gap-4 dark:bg-surface-800">
+                    <nav class="flex flex-col w-80 p-4">
+                        {hrefs.map(link =>
+                            <a class="btn btn-ghost hover:underline p-4" href={link.href} target={link.target}>
+                                {link.title}
+                            </a>
+                        )}
+                    </nav>
+                    <ThemeToggle buttonText="Change theme" client:only="svelte" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="my-2">
 </header>
 
-<style lang="scss">
+<style>
+    details > summary {
+        list-style: none;
+    }
+
+    details summary::-webkit-details-marker {
+        display: none;
+    }
 </style>
