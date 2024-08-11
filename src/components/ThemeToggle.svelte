@@ -2,10 +2,10 @@
   import {onMount} from "svelte";
 
   export let buttonText:string = "";
-  let theme:"light"|"dark" = "light";
+  let theme:"light"|"dark" = "dark";
 
   onMount(() => {
-    localStorage.getItem("theme") as "light"|"dark" || "light"
+    theme = localStorage.getItem("theme") as "light"|"dark" || "light"
   })
 
   /**

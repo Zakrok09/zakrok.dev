@@ -5,6 +5,7 @@ const hrefs: { title: string, href: string, target?: string }[] = [
     { title: "Home", href: "/" },
     { title: "About", href: "/" },
     { title: "Blog", href: "/" },
+    { title: "Projects", href: "/" },
     { title: "Books", href: "/" },
     { title: "GH", href: "https://github.com/Zakrok09", target: "about:black" },
     { title: "LinkedIn", href: "https://www.linkedin.com/in/kiril-panayotov/", target: "about:black" }
@@ -22,7 +23,9 @@ const hrefs: { title: string, href: string, target?: string }[] = [
         <nav class="hidden sm:flex gap-4">
             {hrefs.map(link =>
                 <a class="transition-all hover:underline hover:text-primary dark:hover:text-secondary"
-                   href={link.href}>{link.title}</a>
+                   href={link.href} target={link.target}>
+                    {link.title}
+                </a>
             )}
         </nav>
 
@@ -48,7 +51,7 @@ const hrefs: { title: string, href: string, target?: string }[] = [
                 <div class="menu bg-surface-50 min-h-full flex flex-col gap-4 dark:bg-surface-800">
                     <nav class="flex flex-col w-80 p-4">
                         {hrefs.map(link =>
-                            <a class="btn btn-ghost hover:underline p-4" href={link.href}>
+                            <a class="btn btn-ghost hover:underline p-4" href={link.href} target={link.target}>
                                 {link.title}
                             </a>
                         )}
