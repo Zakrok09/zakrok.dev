@@ -1,13 +1,13 @@
 ---
 layout: "../../layouts/MarkdownLayout.astro"
-title: 'My First Blog Post'
-pubDate: 2022-07-01
-description: 'This is the first post of my new Astro blog.'
+title: 'Building my own website in Astro.'
+pubDate: 2024-08-11
+description: 'With an interesting tech stack - bun + Astro + Svelte - my website is now finally live.'
 author: 'Astro Learner'
-image:
+img:
   url: 'https://docs.astro.build/assets/rose.webp'
   alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "blogging", "learning in public"]
+tags: ["front-end"]
 ---
 
 ## Random nix code

@@ -1,0 +1,21 @@
+---
+import Hero from "../components/Hero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.svelte"
+import BlogPost from "../components/BlogPost.astro";
+const allPosts = await Astro.glob('./posts/*.md');
+---
+
+<BaseLayout>
+    <Hero cta={false} subtitle="{- From notes to articles -}">
+        Blog
+    </Hero>
+    <Section>
+        {allPosts.map((post) =>
+            <BlogPost url={post.url}
+                      frontmatter={post.frontmatter}
+            />
+        )}
+    </Section>
+</BaseLayout>
+
