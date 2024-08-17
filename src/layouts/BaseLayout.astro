@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 import "../styles/global.css";
 ---
 
@@ -39,6 +40,7 @@ import "../styles/global.css";
 </head>
 <body
     class="bg-surface-50 text-surface-800 dark:bg-surface-900 dark:text-neutral-300 transition-colors overflow-x-hidden over">
+<SpeedInsights />
 <Header />
 
 <main>
