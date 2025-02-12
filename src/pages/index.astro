@@ -4,6 +4,9 @@ import Section from "../components/Section.svelte";
 import AboutCard from "../components/AboutCard.astro";
 import Hero from "../components/Hero.astro";
 import HighlightedText from "../components/HighlightedText.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+const allPosts = await Astro.glob('./posts/*.md');
 ---
 
 <BaseLayout>
@@ -42,6 +45,13 @@ import HighlightedText from "../components/HighlightedText.astro";
             <h2 class="text-3xl font-semibold font-mono text-surface-900 dark:text-white">Blog</h2>
         </div>
 
-        <p>well it's currently empty :(</p>
+        <div class="flex gap-4 wrap">
+            <!--TODO: sort by latest first-->
+            {allPosts.map((post) =>
+                <BlogPost url={post.url}
+                          frontmatter={post.frontmatter}
+                />
+            )}
+        </div>
     </Section>
 </BaseLayout>
