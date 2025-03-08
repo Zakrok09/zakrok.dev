@@ -10,7 +10,7 @@ const allPosts = await Astro.glob('./posts/*.md');
     <Hero cta={false} subtitle="{- From notes to articles -}">
         Blog
     </Hero>
-    <Section>
+    <Section className="flex gap-4 wrap">
         {allPosts.map((post) =>
             <BlogPost url={post.url}
                       frontmatter={post.frontmatter}
