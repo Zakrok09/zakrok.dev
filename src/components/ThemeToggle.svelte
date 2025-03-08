@@ -1,8 +1,8 @@
 <script lang="ts">
   import {onMount} from "svelte";
 
-  export let buttonText:string = "";
-  let theme:"light"|"dark" = "dark";
+  let {buttonText} = $props();
+  let theme:"light"|"dark" = $state("dark");
 
   onMount(() => {
     theme = localStorage.getItem("theme") as "light"|"dark" || "light"
@@ -24,6 +24,6 @@
   }
 </script>
 
-<button on:click={toggleTheme} data-testid="theme-switch">
+<button onclick={toggleTheme} data-testid="theme-switch">
     {buttonText} {theme === "light" ? "🌞" : "🌙"}
 </button>
