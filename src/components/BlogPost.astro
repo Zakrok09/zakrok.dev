@@ -8,7 +8,8 @@ const { tags, description, title, pubDate, img } = frontmatter;
     <figure>
         <img
             src={img.url}
-            alt="Shoes" />
+            class="h-40 object-cover w-full"
+            alt="" />
     </figure>
     <div class="card-body p-4">
         <span class="text-sm dark:text-gray-400">Blog Post • {pubDate.toString().slice(0,10)}</span>

@@ -1,8 +1,11 @@
 ---
 layout: "../../layouts/MarkdownLayout.astro"
 title: 'Home manager GitHub GPG commit signing'
+subtitle: 'With managing of all the necessary pinentry requirements.'
 pubDate: 2024-12-16
-description: 'With managing of all the necessary pinentry requirements.'
+description: 'Signing the commits improves trust and adds a proof of integrity to your work.
+Doing it declaratively with Home Manager can save you the trouble of having to reconfigure options and can also give
+you some bonus style points ;) '
 author: 'Kiril Panayotov'
 img:
   url: 'https://docs.astro.build/assets/rose.webp'

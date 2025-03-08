@@ -3,6 +3,8 @@ import Header from "../components/Header.astro";
 import "../styles/global.css";
 ---
 
+<html data-testid="html" lang="en">
+
 <script is:inline>
     const theme = (() => {
         if (typeof localStorage !== "undefined" && localStorage.getItem("theme"))
@@ -19,8 +21,6 @@ import "../styles/global.css";
 
     window.localStorage.setItem("theme", theme);
 </script>
-
-<html data-testid="html" lang="en">
 <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -45,7 +45,7 @@ import "../styles/global.css";
     <slot />
 </main>
 
-<footer class="w-screen mt-40 h-40 bg-surface-900 text-surface-100 font-mono flex justify-center items-center gap-4">
+<footer class="w-screen mt-16 h-40 bg-surface-900 text-surface-100 font-mono flex justify-center items-center gap-4">
     <p>zakrok.dev</p>
     <p>❤</p>
     <p>all rights reserved</p>
