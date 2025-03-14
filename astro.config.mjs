@@ -12,7 +12,7 @@ export default defineConfig({
   output: "server",
   integrations: [svelte(), tailwind(), sitemap()],
   server: {
-    port: 80
+    port: 8080
   },
 
   adapter: node({
