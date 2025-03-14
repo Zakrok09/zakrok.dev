@@ -11,6 +11,9 @@ export default defineConfig({
   site: 'https://zakrok.dev',
   output: "server",
   integrations: [svelte(), tailwind(), sitemap()],
+  server: {
+    port: 80
+  },
 
   adapter: node({
     mode: "standalone",
