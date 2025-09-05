@@ -1,3 +1,1 @@
-# My personal website, built in Astro
-
-WIP
+source code of my personal website
