@@ -1,0 +1,31 @@
+---
+const { buttonText = "Change theme" } = Astro.props as { buttonText?: string };
+---
+
+<button id="theme-toggle" data-testid="theme-switch" class="btn btn-ghost">
+    {buttonText} <span id="theme-emoji" aria-hidden="true">🌙</span>
+</button>
+
+<script is:inline>
+    (function() {
+        try {
+            const ls = window.localStorage;
+            let theme = ls.getItem("theme") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            const root = document.documentElement;
+            const apply = () => {
+                if (theme === "dark") root.classList.add("dark");
+                else root.classList.remove("dark");
+                ls.setItem("theme", theme);
+                const emoji = document.getElementById("theme-emoji");
+                if (emoji) emoji.textContent = theme === "light" ? "🌞" : "🌙";
+            };
+            apply();
+            const btn = document.getElementById("theme-toggle");
+            if (btn) btn.addEventListener("click", () => {
+                theme = theme === "light" ? "dark" : "light";
+                apply();
+            });
+        } catch (_) {
+        }
+    })();
+</script>
