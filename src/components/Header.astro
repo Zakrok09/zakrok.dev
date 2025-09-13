@@ -1,5 +1,5 @@
 ---
-import ThemeToggle from "./ThemeToggle.svelte";
+import ThemeToggle from "./ThemeToggle.astro";
 
 const hrefs: { title: string, href: string, target?: string }[] = [
     { title: "Home", href: "/" },
@@ -17,7 +17,7 @@ const hrefs: { title: string, href: string, target?: string }[] = [
         <div>
             <b class="font-mono">zakrok.dev</b>
             <div class="hidden sm:inline">
-                <ThemeToggle client:only="svelte" />
+                <ThemeToggle />
             </div>
         </div>
         <nav class="hidden sm:flex gap-4">
@@ -35,7 +35,6 @@ const hrefs: { title: string, href: string, target?: string }[] = [
                 <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
                         viewBox="0 0 24 24"
                         class="inline-block h-6 w-6 stroke-current">
                         <path
@@ -56,7 +55,7 @@ const hrefs: { title: string, href: string, target?: string }[] = [
                             </a>
                         )}
                     </nav>
-                    <ThemeToggle buttonText="Change theme" client:only="svelte" />
+                    <ThemeToggle buttonText="Change theme" />
                 </div>
             </div>
         </div>
