@@ -8,7 +8,7 @@ Doing it declaratively with Home Manager can save you the trouble of having to r
 you some bonus style points ;) '
 author: 'Kiril Panayotov'
 img:
-  url: 'blog/home-manager-gpg.jpg'
+  url: 'blog-img/home-manager-gpg.jpg'
   alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["nixos"]
 ---
