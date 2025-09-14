@@ -14,7 +14,7 @@ const allPosts = await Astro.glob('./posts/*.md');
         Hello, I am <HighlightedText>Kiril Panayotov</HighlightedText>
     </Hero>
 
-    <Section className="bg-gray-50 dark:bg-surface-950 flex flex-col md:grid md:grid-cols-2 py-16">
+    <Section className="bg-gray-50 dark:bg-surface-950 flex flex-col xl:grid xl:grid-cols-2 py-16">
         <div class="text-gray-600 dark:text-gray-400 flex flex-col items-start gap-3">
             <div class="py-4">
                 <span class="text-xs text-gray-400 font-mono">// all kinds of things</span>
@@ -44,8 +44,11 @@ const allPosts = await Astro.glob('./posts/*.md');
         </div>
 
         <div class="flex gap-4 wrap">
-            <!--TODO: sort by latest first-->
-            {allPosts.map((post) =>
+            {allPosts.sort((a, b) => {
+                const aDate = new Date(a.frontmatter.pubDate);
+                const bDate = new Date(b.frontmatter.pubDate);
+                return bDate.getTime() - aDate.getTime();
+            }).map((post) =>
                 <BlogPost url={post.url}
                           frontmatter={post.frontmatter}
                 />

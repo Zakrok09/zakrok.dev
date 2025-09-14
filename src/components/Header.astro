@@ -1,25 +1,18 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro";
-
 const hrefs: { title: string, href: string, target?: string }[] = [
     { title: "Home", href: "/" },
     { title: "About", href: "/about" },
     { title: "Blog", href: "/blog" },
-    { title: "Projects", href: "/" },
-    { title: "Books", href: "/" },
-    { title: "GH", href: "https://github.com/Zakrok09", target: "about:black" },
-    { title: "LinkedIn", href: "https://www.linkedin.com/in/kiril-panayotov/", target: "about:black" }
+    { title: "Projects", href: "/projects" },
+    { title: "Books", href: "/books" },
+    { title: "GH", href: "https://github.com/Zakrok09", target: "_blank" },
+    { title: "LinkedIn", href: "https://www.linkedin.com/in/kiril-panayotov/", target: "_blank" }
 ];
 ---
 
 <header data-testid="header" class="w-screen px-4 py-4 md:px-20 lg:px-40 xl:px-96">
     <div class="flex justify-between items-center">
-        <div>
-            <b class="font-mono">zakrok.dev</b>
-            <div class="hidden sm:inline">
-                <ThemeToggle />
-            </div>
-        </div>
+        <b class="font-mono">zakrok.dev</b>
         <nav class="hidden sm:flex gap-4">
             {hrefs.map(link =>
                 <a class="transition-all hover:underline hover:text-primary dark:hover:text-secondary"
@@ -29,8 +22,8 @@ const hrefs: { title: string, href: string, target?: string }[] = [
             )}
         </nav>
 
-        <div class="drawer-end sm:hidden">
-            <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+        <div class="drawer drawer-end sm:hidden">
+            <input id="my-drawer-3" type="checkbox" class="drawer-toggle sr-only" />
             <div class="drawer-content flex flex-col sm:hidden">
                 <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
                     <svg
@@ -55,7 +48,6 @@ const hrefs: { title: string, href: string, target?: string }[] = [
                             </a>
                         )}
                     </nav>
-                    <ThemeToggle buttonText="Change theme" />
                 </div>
             </div>
         </div>
